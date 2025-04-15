@@ -1,10 +1,18 @@
+# Bank Account Manager 
+# This program allows users to create a bank account, deposit and withdraw money, check their balance, and view all accounts.
+# It uses a JSON file to store account data.
+
 import json
 import os
 
 FILENAME = "./bank-acount-manager/bank-data.txt"
 
-
+# BankAccount class to manage bank account operations
 class BankAccount:
+
+
+# check account balance 
+
     def check_balance(self):
         if not os.path.exists(FILENAME):
             print("No account data found.")
@@ -37,7 +45,8 @@ class BankAccount:
         except json.JSONDecodeError:
             print("Error reading account data. Please check the file format.")
             return
-
+        
+# create account 
     def create_account(self):
         accountNumber = input("Input account number (6 digits): ")
         if not accountNumber.isdigit() or len(accountNumber) != 6:
@@ -78,6 +87,8 @@ class BankAccount:
 
         print(f"Account ({accountNumber}) successfully created for {name} with balance {initial_balance}.")
 
+
+# withdraw money from account
     def withdraw(self):
         accountNumber = input("Input account number: ")
         if not accountNumber.isdigit() or len(accountNumber) != 6:
@@ -112,6 +123,7 @@ class BankAccount:
             print("Error reading account data. Please check the file format.")
             return
 
+# deposit money into account
     def deposit(self):
         accountNumber = input("Input account number: ")
         if not accountNumber.isdigit() or len(accountNumber) != 6:
@@ -142,6 +154,7 @@ class BankAccount:
             print("Error reading account data. Please check the file format.")
             return
 
+# view all accounts
     def all_accounts(self):
         if not os.path.exists(FILENAME):
             print("No account data found.")
@@ -171,7 +184,7 @@ def menu():
 
 
 print("Welcome to the Bank Account Manager!")
-account = BankAccount()  # single reusable instance
+account = BankAccount() 
 
 while True:
     menu()
