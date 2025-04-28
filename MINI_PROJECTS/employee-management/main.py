@@ -70,7 +70,33 @@ class Employee:
             print(f"ID: {emp_id}, Name: {emp_data['name']}, Salary: {emp_data['salary']}, Category: {emp_data['category']}, Bonus: {emp_data['bonus']}")
         print("Total Employees: ", len(data))
 
+# class Manager(Employee):
+#     def __init__():
+#         super().__init__()
+
+#     def get_salary():
+#         try:
+#             with open(FILENAME, "r") as file:
+#                 data = json.load(file)
+#         except json.JSONDecodeError:
+#             print("Error reading account data. Please check the file format.")
+#             return
+        
 
 
-Employee.add_employee()
-Employee.view_employee()
+       
+
+#     def work(self):
+        
+    
+# class Developer(Employee):
+#     def __init__():
+#         super().__init__()
+    
+#     def add_stack():
+#         stack = input("What is your New Stack? ")
+#         while not stack:
+#             print("stack cannot be empty.\n")
+#             stack=input("What is your stack? ")
+        
+
